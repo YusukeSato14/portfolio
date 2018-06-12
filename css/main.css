@@ -1,0 +1,858 @@
+* {
+    font-family: 'Alegreya', serif;
+    margin: 0 auto;
+    padding: 0;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    min-width: 1000px;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+
+/*wrapセクション*/
+#wrap {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    animation: fadeInWrap 5s ease-out 0;
+    -webkit-animation: fadeInWrap 5s ease-out 0;
+    background: #222;
+}
+
+header {
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    background: #222 url("../imgs/low-contrast-linen.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    z-index: 8;
+    animation: fadeInWrap 5s ease-out 0s;
+    -webkit-animation: fadeInWrap 5s ease-out 0s;
+}
+
+@keyframes fadeInWrap {
+  from {
+    background: #fff;
+  }
+  to {
+    background: #000;
+  }
+}
+@-webkit-keyframes fadeInWrap {
+  from {
+    background: #fff;
+  }
+  to {
+    background: #000;
+  }
+}
+
+
+h1::after {
+    position: absolute;
+    content: '';
+    top: 180px;
+    left: 0;
+    background: #000;
+    width: 100%;
+    height: 2px;
+    animation: lineX 5s ease-out 0s;
+    transform-origin: left top;
+    -webkit-animation: lineX 5s ease-out 0s;
+    -webkit-transform-origin: left top;
+}
+
+@keyframes lineX {
+    from {
+        background: #000;
+        transform: scale(0, 1);/* 水平方向に移動 */
+    }
+    to {
+        background: #000;
+        transform: scale(1, 1);/* 水平方向に移動 */
+    }
+}
+
+@-webkit-keyframes lineX {
+    from {
+        background: #000;
+        transform: scale(0, 1);
+    }
+    to {
+        background: #000;
+        transform: scale(1, 1);
+    }
+}
+
+#intro {
+    margin-left: 10px;
+}
+
+svg {
+    height: 170px;
+    margin-left: -250px;
+}
+
+#logo {
+    display: inline-block;
+    float: left;
+    fill:#fff;
+    stroke: #000;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+    -webkit-animation: hello 8s ease-in-out -3s;
+    animation: hello 8s ease-in -3s;
+}
+
+@-webkit-keyframes hello {
+    0% {
+        stroke-dashoffset: 2000px;
+        fill:transparent;
+    }
+    40% {
+        stroke-dashoffset: 2000px;
+        fill:transparent;
+    }
+    50% {
+        fill:transparent;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill:#000;
+    }
+}
+
+
+/*レフトカラム*/
+#leftColumn {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100%;
+    padding-top: 180px;
+    background: #222 url("../imgs/low-contrast-linen.png");
+    z-index: 6;
+    animation: fadeInWrap 5s ease-out 0s;
+}
+
+/*ドア制御*/
+.doors {
+    position: relative;
+    bottom: 0;
+    width: calc(100% - 600px);
+    height: 100%;
+    padding-top: 180px;
+    float: left;
+    z-index: 3;
+}
+.doors > * {
+    box-sizing: border-box;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding-top: 180px;
+    background: #222 url("../imgs/low-contrast-linen.png");
+    transition: all 1.5s ease-out;
+    float: left;
+    animation: fadeInWrap 5s ease-out 0s;
+}
+.left {
+    left: 0;
+    z-index: 4;
+}
+.right {
+    right: 0;
+    z-index: 5;
+}
+.left::before, .left::after, .right::before, .right::after {
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+}
+.left::before {
+    bottom: 0;
+    left: 1px;
+    width: 3px;
+    height: 100%;
+    transform-origin: left bottom;
+    animation: lineY 1.5s ease-out 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    -webkit-animation: lineY 1.5s ease-out 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+.left::after {
+    bottom: 0;
+    right: -3px;
+    width: 3px;
+    height: 100%;
+    transform-origin: right bottom;
+    animation: lineY 1.5s ease-out 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    -webkit-animation: lineY 1.5s ease-out 1.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+.right::before {
+    bottom: 0;
+    left: -3px;
+    width: 3px;
+    height: 100%;
+    transform-origin: left bottom;
+    animation: lineY 1.5s ease-out 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    -webkit-animation: lineY 1.5s ease-out 1.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+.right::after {
+    bottom: 0;
+    right: 1px;
+    width: 3px;
+    height: 100%;
+    transform-origin: right bottom;
+    animation: lineY 1.5s ease-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    -webkit-animation: lineY 1s ease-out 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+@keyframes lineY {
+    from {
+        background: #000;
+        transform: scale(1, 0);
+    }
+    to {
+        background: #000;
+        transform: scale(1, 1);
+    }
+}
+@-webkit-keyframes lineY {
+    from {
+        background: #000;
+        transform: scale(1, 0);
+    }
+    to {
+        background: #000;
+        transform: scale(1, 1);
+    }
+}
+
+
+
+/*ライトカラム*/
+#rightColumn {
+    position: relative;
+    float: right;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100%;
+    padding-top: 180px;
+    background: #222 url("../imgs/low-contrast-linen.png");
+    z-index: 7;
+    animation: fadeInWrap 5s ease-out 0s;
+}
+
+
+ul {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.btn {
+    outline: none;
+    display: inline-block;
+    color: #f5f5f5;
+    background: radial-gradient(ellipse at center, #888888, #eeeeee);
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 150ms linear;
+    cursor: pointer;
+    height: 40px;
+    margin: 0 1em 2em;
+    position: relative;
+    box-shadow: 0 1px 1px #aaaaaa, 1px 2px 3px #999999;
+    text-decoration: none;
+    text-transform: uppercase;
+    animation: fadeIn 5s ease-out;
+    -webkit-animation: fadeIn 5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        color: #ccc;
+        background: #fff;
+        box-shadow: 0 1px 1px #fff, 1px 2px 3px #fff;
+    }
+    to {
+        color: #000;
+        background: #000;
+        box-shadow: 0 1px 1px #000, 1px 2px 3px #000;
+    }
+}
+
+
+.btn:hover {
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+    background: radial-gradient(ellipse at center, #eeeeee, #888888);
+    color: #dddddd;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #999999;
+    transition: all 250ms linear;
+}
+
+.btn::before, .btn::after,
+.type-textBound::before, .type-textBound::after {
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+}
+/*下のボーダー*/
+.btn::before {
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    transform-origin: left bottom;
+    animation: leftAnimation 1.5s linear 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation: leftAnimation 1.5s linear 0.3s;
+    -webkit-animation-iteration-count: 1;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+/*右のボーダー*/
+.btn::after {
+    bottom: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform-origin: right bottom;
+    animation: bottomAnimation 1s linear 0.8s;
+    animation-iteration-count: 1;
+    -webkit-animation: bottomAnimation 1s linear 0.8s;
+    -webkit-animation-iteration-count: 1;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+/*上のボーダー*/
+.type-textBound::before {
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    transform-origin: right top;
+    animation: rightAnimation 1.5s linear 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation: rightAnimation 1.5s linear 0.3s;
+    -webkit-animation-iteration-count: 1;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+/*左のボーダー*/
+.type-textBound::after {
+    top: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform-origin: left top;
+    animation: topAnimation 1s linear 0.8s;
+    animation-iteration-count: 1;
+    -webkit-animation: topAnimation 1s linear 0.8s;
+    -webkit-animation-iteration-count: 1;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+
+/*btnアニメ*/
+@keyframes topAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+@-webkit-keyframes topAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+@keyframes bottomAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+@-webkit-keyframes bottomAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+@keyframes rightAnimation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes rightAnimation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes leftAnimation  {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+@-webkit-keyframes leftAnimation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+.type-textBound {
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    margin: auto;
+    padding: auto;
+}
+
+.textBound1 {
+    display: inline-block;
+    animation: bound 1.3s ease-in-out;
+    -webkit-animation: bound 1.3s ease-in-out;
+}
+
+.textBound3 {
+    display: inline-block;
+    animation: bound 1.5s ease-in-out;
+    -webkit-animation: bound 1.5s ease-in-out;
+}
+
+.textBound2 {
+    display: inline-block;
+    animation: bound 1.6s ease-in-out;
+    -webkit-animation: bound 1.6s ease-in-out;
+}
+
+.textBound4 {
+    display: inline-block;
+    animation: bound 1s ease-in-out;
+    -webkit-animation: bound 1s ease-in-out;
+}
+
+.textBound5 {
+    display: inline-block;
+    animation: bound .8s ease-in-out;
+    -webkit-animation: bound .8s ease-in-out;
+}
+
+.textBound6 {
+    display: inline-block;
+    animation: bound 1.4s ease-in-out;
+    -webkit-animation: bound 1.4s ease-in-out;
+}
+
+.textBound7 {
+    display: inline-block;
+    animation: bound 1.2s ease-in-out;
+    -webkit-animation: bound 1.2s ease-in-out;
+}
+
+@keyframes bound {
+    0% {transform: scale(0) translate(0,-500px);}
+    50% {transform: scaleX(2) translate(0,200px);}
+    70% {transform: scaleY(.5) translate(0,-100px);}
+    90% {transform: scaleX(1.5) translate(0,50px);}
+    100% {transform: scale(1) translate(0,0);}
+}
+
+
+/*メインコンテンツ*/
+#content {
+    margin: 180px 300px 0;
+    width: calc(100% - 600px);
+    min-width: 400px;
+    position: absolute;
+    font-size: 40px;
+    height: calc(100vh - 180px);
+    overflow-y: hidden;
+    z-index: 2;
+    background-color: #fff;
+}
+
+article {
+    height: 100%;
+    padding: 0 30px 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 42px;
+}
+
+#works {
+    background: url("../imgs/texture__space_by_mjag.jpg");
+    color: #fff;
+}
+
+/*backgroundScrollWorks*/
+@keyframes bgScrollW {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 3000px 3000px;
+    }
+}
+
+@-webkit-keyframes bgScrollW {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 100px;
+    }
+}
+
+.imgBox {
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.worksImg {
+    margin: auto;
+    vertical-align: middle;
+    width: 80%;
+    border-radius: 5px;
+}
+
+#about {
+    background: #2C5491 url("../imgs/bg_clouds.png") repeat 0 bottom;
+}
+
+#about ul {
+    width: 100%;
+    height: calc(100% - 114px);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes bcScrollA {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 6000px 0;
+    }
+}
+@-webkit-keyframes bcScrollA {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 6000px 0;
+    }
+}
+
+#contact {
+    background: url("../imgs/sea.jpg");
+    background-size: 100% 100%;
+}
+
+form {
+    margin: 0 auto;
+    padding: 4%;
+    box-sizing: border-box;
+    display: block;
+    height: calc(100% - 114px);
+    width: 100%;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+label {
+    float:left;
+}
+
+label, input, textarea {
+    display: block;
+    outline: none;
+    margin: 0 0 3.5% 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: transparent;
+    font-size: 1em;
+}
+
+label {
+    width: 20%;
+    box-sizing: border-box;
+    float: left;
+}
+
+input, textarea {
+    width: 64%;
+    box-sizing: border-box;
+    float: right;
+}
+
+#name {
+    border: none;
+    border-bottom: solid 3px #000;
+    height: 10%;
+}
+
+#email {
+    border: none;
+    border-bottom: solid 3px #000;
+    height: 10%;
+}
+
+#message {
+    height: 50%;
+    resize: none;
+    border: none;
+    border-bottom: solid 3px #000;
+}
+
+input#submit {
+    background-color: rgba(0, 191, 255, 0.4);
+    width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    clear: both;
+    float: right;
+    margin: 3.5% 4%;
+    padding: 10px;
+    font-size: 20px;
+    border: groove 3px #222;
+}
+
+input#submit:hover {
+    background: rgba(0, 191, 255, 0.8);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    z-index: 8;
+    animation: fadeInFooter 5s ease-out 0s;
+}
+
+@keyframes fadeInFooter {
+    from {
+        color: #fff;
+    }
+    to {
+        color :#000;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    * {
+        margin: 0 auto;
+        padding: 0;
+        font-weight: normal;
+        text-decoration: none;
+    }
+    body {
+        width: 100vw;
+        height: 100%;
+    }
+    header, h1 {
+        width: 100vw;
+        height: 100px;
+    }
+    h1::after {
+        top: 100px;
+    }
+    svg {
+        margin-left: -300px;
+    }
+    #logo, svg {
+        height: 100px;
+    }
+    #wrap {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: transparent;
+    }
+    #leftColumn {
+        position: unset;
+        display: none;
+        width: 0;
+    }
+    .doors {
+        padding-top: 100px;
+        width: 100vw;
+        height: calc(100vh - 110px);
+        box-sizing: border-box;
+    }
+    .doors > * {
+        padding-top: 0;
+        width: 50vw;
+        height: calc(100vh - 100px);
+    }
+    #rightColumn {
+        clear: both;
+        float: left;
+        width: 100vw;
+        height: 110px;
+        bottom: 0;
+        display: block;
+        padding: 0;
+    }
+    #rightColumn::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        background: #000;
+        width: 100%;
+        height: 2px;
+        animation: lineX 5s ease-out 0s; /* アニメーション名を指定 アニメーション一回分の時間の長さ */
+        transform-origin: right top;
+        -webkit-animation: lineX 5s ease-out 0s;
+        -webkit-transform-origin: right top;
+    }
+    .floor {
+        position: absolute;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        display: flex;
+        box-sizing: border-box;
+        margin: 30px 0;
+        padding: 0;
+    }
+    .floorBtn {
+        width: 50px;
+        height: 50px;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        margin: auto;
+        top: 0;
+        left: 0;
+    }
+    .btn span {
+        display: none;
+    }
+    .btn span:first-child {
+        display: inline;
+        font-size: 1.5em;
+    }
+    .openClose {
+        display: none;
+    }
+    #content {
+        width: 100vw;
+        height: calc(100% - 210px);
+        margin: 100px 0 80px;
+        box-sizing: border-box;
+        font-size: 1.4em;
+    }
+    #works {
+        margin: 0;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    #about {
+        margin: 0;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    #about ul {
+        height: 80%;
+    }
+    #contact {
+        margin: 0;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    form {
+        height: 85%;
+    }
+    label {
+        clear:both;
+    }
+    input, textarea {
+        float: right;
+    }
+    label, input, textarea {
+        font-size: 1em;
+    }
+    input#submit {
+        margin: 0;
+        padding: 5px 0;
+        width: 50%;
+    }
+}

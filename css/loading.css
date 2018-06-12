@@ -1,0 +1,547 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+}
+
+#skip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  width: 70px;
+  font-size: 20px;
+}
+
+#skip:hover {
+  cursor: pointer;
+}
+
+#skipImg {
+  width: 70px;
+}
+
+#loadingText {
+  font-size: 7em;
+  margin: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  #loadingText {
+    font-size: 2em;
+  }
+  @media screen and (min-width: 500px) {
+    #loadingText {
+      font-size: 4em;
+    }
+  }
+}
+
+#made {
+  position: absolute;
+  margin-bottom: 20px;
+  bottom: 0;
+  left: 0;
+  font-size:15px;
+}
+
+.char {
+  cursor: pointer;
+  float: left;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.char:nth-child(1) {
+  color: #33ffbb;
+  -webkit-animation: r0 2s 0s ease-out infinite;
+  -moz-animation: r0 2s 0s ease-out infinite;
+  animation: r0 2s 0s ease-out infinite;
+}
+.char:nth-child(1):hover {
+  color: #ff3333;
+  -webkit-animation: r20 0.5s 0.4s ease-out infinite;
+  -moz-animation: r20 0.5s 0.4s ease-out infinite;
+  animation: r20 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r0 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 179, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 179, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affb3, 0 0 12px #333, 0 0 12px #1affb3;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 179, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 179, 0);
+  }
+}
+@-moz-keyframes r0 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 179, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 179, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affb3, 0 0 12px #333, 0 0 12px #1affb3;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 179, 0), 0 0 40px #333, 0 0 40px rgba(26, 255, 179, 0);
+  }
+}
+@keyframes r0 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 179, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 179, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affb3, 0 0 12px #333, 0 0 12px #1affb3;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 179, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 179, 0);
+  }
+}
+@-webkit-keyframes r20 {
+  from {
+    text-shadow: 0 0 8px #ff1a1a, 0 0 12px #333, 0 0 12px #ff1a1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 26, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 26, 26, 0);
+  }
+}
+@-moz-keyframes r20 {
+  from {
+    text-shadow: 0 0 8px 6px #ff1a1a, 0 0 12px #333, 0 0 12px #ff1a1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 26, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 26, 26, 0);
+  }
+}
+@keyframes r20 {
+  from {
+    text-shadow: 0 0 8px 6px #ff1a1a, 0 0 12px 10px #333, 0 0 12px 14px #ff1a1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 26, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 26, 26, 0);
+  }
+}
+.char:nth-child(2) {
+  color: #33ffdd;
+  -webkit-animation: r1 2s 0.25s ease-out infinite;
+  -moz-animation: r1 2s 0.25s ease-out infinite;
+  animation: r1 2s 0.25s ease-out infinite;
+}
+.char:nth-child(2):hover {
+  color: #ff4733;
+  -webkit-animation: r21 0.5s 0.4s ease-out infinite;
+  -moz-animation: r21 0.5s 0.4s ease-out infinite;
+  animation: r21 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r1 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 217, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 217, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affd9, 0 0 12px #333, 0 0 12px #1affd9;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 217, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 217, 0);
+  }
+}
+@-moz-keyframes r1 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 217, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 217, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affd9, 0 0 12px #333, 0 0 12px #1affd9;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 217, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 217, 0);
+  }
+}
+@keyframes r1 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 217, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 217, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affd9, 0 0 12px #333, 0 0 12px #1affd9;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 217, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 217, 0);
+  }
+}
+@-webkit-keyframes r21 {
+  from {
+    text-shadow: 0 0 8px #ff301a, 0 0 12px #333, 0 0 12px #ff301a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 48, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 48, 26, 0);
+  }
+}
+@-moz-keyframes r21 {
+  from {
+    text-shadow: 0 0 8px #ff301a, 0 0 12px #333, 0 0 12px #ff301a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 48, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 48, 26, 0);
+  }
+}
+@keyframes r21 {
+  from {
+    text-shadow: 0 0 8px #ff301a, 0 0 12px #333, 0 0 12px #ff301a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 48, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 48, 26, 0);
+  }
+}
+.char:nth-child(3) {
+  color: #33ffff;
+  -webkit-animation: r2 2s 0.5s ease-out infinite;
+  -moz-animation: r2 2s 0.5s ease-out infinite;
+  animation: r2 2s 0.5s ease-out infinite;
+}
+.char:nth-child(3):hover {
+  color: #ff5c33;
+  -webkit-animation: r22 0.5s 0.4s ease-out infinite;
+  -moz-animation: r22 0.5s 0.4s ease-out infinite;
+  animation: r22 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r2 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affff, 0 0 12px #333, 0 0 12px #1affff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 255, 0);
+  }
+}
+@-moz-keyframes r2 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affff, 0 0 12px #333, 0 0 12px #1affff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 255, 0);
+  }
+}
+@keyframes r2 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 255, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1affff, 0 0 12px #333, 0 0 12px #1affff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 255, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 255, 255, 0);
+  }
+}
+@-webkit-keyframes r22 {
+  from {
+    text-shadow: 0 0 8px #ff471a, 0 0 12px #333, 0 0 12px #ff471a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 71, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 71, 26, 0);
+  }
+}
+@-moz-keyframes r22 {
+  from {
+    text-shadow: 0 0 8px #ff471a, 0 0 12px #333, 0 0 12px #ff471a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 71, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 71, 26, 0);
+  }
+}
+@keyframes r22 {
+  from {
+    text-shadow: 0 0 8px #ff471a, 0 0 12px #333, 0 0 12px #ff471a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 71, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 71, 26, 0);
+  }
+}
+.char:nth-child(4) {
+  color: #33ddff;
+  -webkit-animation: r3 2s 0.75s ease-out infinite;
+  -moz-animation: r3 2s 0.75s ease-out infinite;
+  animation: r3 2s 0.75s ease-out infinite;
+}
+.char:nth-child(4):hover {
+  color: #ff7033;
+  -webkit-animation: r23 0.5s 0.4s ease-out infinite;
+  -moz-animation: r23 0.5s 0.4s ease-out infinite;
+  animation: r23 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r3 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 217, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 217, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1ad9ff, 0 0 12px #333, 0 0 12px #1ad9ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 217, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 217, 255, 0);
+  }
+}
+@-moz-keyframes r3 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 217, 255, 0), 0 0 0 0 #333, 0 0 0 rgba(26, 217, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1ad9ff, 0 0 12px #333, 0 0 12px #1ad9ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 217, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 217, 255, 0);
+  }
+}
+@keyframes r3 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 217, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 217, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1ad9ff, 0 0 12px #333, 0 0 12px #1ad9ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 217, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 217, 255, 0);
+  }
+}
+@-webkit-keyframes r23 {
+  from {
+    text-shadow: 0 0 8px #ff5e1a, 0 0 12px #333, 0 0 12px #ff5e1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 94, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 94, 26, 0);
+  }
+}
+@-moz-keyframes r23 {
+  from {
+    text-shadow: 0 0 8px #ff5e1a, 0 0 12px #333, 0 0 12px #ff5e1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 94, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 94, 26, 0);
+  }
+}
+@keyframes r23 {
+  from {
+    text-shadow: 0 0 8px #ff5e1a, 0 0 12px #333, 0 0 12px #ff5e1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 94, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 94, 26, 0);
+  }
+}
+.char:nth-child(5) {
+  color: #33bbff;
+  -webkit-animation: r4 2s 1s ease-out infinite;
+  -moz-animation: r4 2s 1s ease-out infinite;
+  animation: r4 2s 1s ease-out infinite;
+}
+.char:nth-child(5):hover {
+  color: #ff8533;
+  -webkit-animation: r24 0.5s 0.4s ease-out infinite;
+  -moz-animation: r24 0.5s 0.4s ease-out infinite;
+  animation: r24 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r4 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 179, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 179, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1ab3ff, 0 0 12px #333, 0 0 12px #1ab3ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 179, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 179, 255, 0);
+  }
+}
+@-moz-keyframes r4 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 179, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 179, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1ab3ff, 0 0 12px #333, 0 0 12px #1ab3ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 179, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 179, 255, 0);
+  }
+}
+@keyframes r4 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 179, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 179, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1ab3ff, 0 0 12px #333, 0 0 12px #1ab3ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 179, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 179, 255, 0);
+  }
+}
+@-webkit-keyframes r24 {
+  from {
+    text-shadow: 0 0 8px #ff751a, 0 0 12px #333, 0 0 12px #ff751a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 117, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 117, 26, 0);
+  }
+}
+@-moz-keyframes r24 {
+  from {
+    text-shadow: 0 0 8px #ff751a, 0 0 12px #333, 0 0 12px #ff751a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 117, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 117, 26, 0);
+  }
+}
+@keyframes r24 {
+  from {
+    text-shadow: 0 0 8px #ff751a, 0 0 12px #333, 0 0 12px #ff751a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 117, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 117, 26, 0);
+  }
+}
+.char:nth-child(6) {
+  color: #3399ff;
+  -webkit-animation: r5 2s 1.25s ease-out infinite;
+  -moz-animation: r5 2s 1.25s ease-out infinite;
+  animation: r5 2s 1.25s ease-out infinite;
+}
+.char:nth-child(6):hover {
+  color: #ff9933;
+  -webkit-animation: r25 0.5s 0.4s ease-out infinite;
+  -moz-animation: r25 0.5s 0.4s ease-out infinite;
+  animation: r25 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r5 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 140, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 140, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1a8cff, 0 0 12px #333, 0 0 12px #1a8cff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 140, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 140, 255, 0);
+  }
+}
+@-moz-keyframes r5 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 140, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 140, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1a8cff, 0 0 12px #333, 0 0 12px #1a8cff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 140, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 140, 255, 0);
+  }
+}
+@keyframes r5 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 140, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 140, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1a8cff, 0 0 12px #333, 0 0 12px #1a8cff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 140, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 140, 255, 0);
+  }
+}
+@-webkit-keyframes r25 {
+  from {
+    text-shadow: 0 0 8px 6px #ff8c1a, 0 0 12px 10px #333, 0 0 12px 14px #ff8c1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 140, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 140, 26, 0);
+  }
+}
+@-moz-keyframes r25 {
+  from {
+    text-shadow: 0 0 8px #ff8c1a, 0 0 12px #333, 0 0 12px #ff8c1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 140, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 140, 26, 0);
+  }
+}
+@keyframes r25 {
+  from {
+    text-shadow: 0 0 8px #ff8c1a, 0 0 12px #333, 0 0 12px #ff8c1a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 140, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 140, 26, 0);
+  }
+}
+
+.char:nth-child(7) {
+  color: #3377ff;
+  -webkit-animation: r6 2s 1.5s ease-out infinite;
+  -moz-animation: r6 2s 1.5s ease-out infinite;
+  animation: r6 2s 1.5s ease-out infinite;
+}
+.char:nth-child(7):hover {
+  color: #ffa433;
+  -webkit-animation: r26 0.5s 0.4s ease-out infinite;
+  -moz-animation: r26 0.5s 0.4s ease-out infinite;
+  animation: r26 0.5s 0.4s ease-out infinite;
+}
+
+@-webkit-keyframes r6 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 100, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 100, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1a57ff, 0 0 12px #333, 0 0 12px #1a57ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 100, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 100, 255, 0);
+  }
+}
+@-moz-keyframes r6 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 100, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 100, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1a57ff, 0 0 12px #333, 0 0 12px #1a57ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 100, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 100, 255, 0);
+  }
+}
+@keyframes r6 {
+  0% {
+    text-shadow: 0 0 8px rgba(26, 100, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 100, 255, 0);
+  }
+  10% {
+    text-shadow: 0 0 8px #1a57ff, 0 0 12px #333, 0 0 12px #1a57ff;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(26, 100, 255, 0), 0 0 0 #333, 0 0 0 rgba(26, 100, 255, 0);
+  }
+}
+@-webkit-keyframes r26 {
+  from {
+    text-shadow: 0 0 8px #ff571a, 0 0 12px #333, 0 0 12px #ff571a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 100, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 100, 26, 0);
+  }
+}
+@-moz-keyframes r26 {
+  from {
+    text-shadow: 0 0 8px #ff571a, 0 0 12px #333, 0 0 12px #ff571a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 100, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 100, 26, 0);
+  }
+}
+@keyframes r26 {
+  from {
+    text-shadow: 0 0 8px #ff571a, 0 0 12px #333, 0 0 12px #ff571a;
+  }
+  to {
+    text-shadow: 0 0 8px rgba(255, 100, 26, 0), 0 0 4px #333, 0 0 4px rgba(255, 100, 26, 0);
+  }
+}
