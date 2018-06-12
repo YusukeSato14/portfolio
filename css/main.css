@@ -721,7 +721,7 @@ footer {
         font-weight: normal;
         text-decoration: none;
     }
-    body {
+    html, body {
         width: 100vw;
         height: 100%;
     }
