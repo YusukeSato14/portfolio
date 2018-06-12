@@ -740,7 +740,7 @@ footer {
     }
     #wrap {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         position: absolute;
         background: transparent;
     }
@@ -752,13 +752,13 @@ footer {
     .doors {
         padding-top: 100px;
         width: 100vw;
-        height: calc(100vh - 110px);
+        height: calc(100% - 110px);
         box-sizing: border-box;
     }
     .doors > * {
         padding-top: 0;
         width: 50vw;
-        height: calc(100vh - 100px);
+        height: calc(100% - 100px);
     }
     #rightColumn {
         clear: both;
