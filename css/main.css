@@ -751,7 +751,7 @@ footer {
     .doors {
         padding-top: 100px;
         width: 100vw;
-        height: calc(100vh - 110px);
+        height: calc(100% - 110px);
         box-sizing: border-box;
     }
     .doors > * {
