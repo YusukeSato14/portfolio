@@ -303,6 +303,7 @@ li {
     letter-spacing: 1px;
     transition: all 150ms linear;
     cursor: pointer;
+    border-radius: 2px;
     height: 40px;
     margin: 0 1em 2em;
     position: relative;
