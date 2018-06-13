@@ -5,6 +5,7 @@ const $right = $('.right');
 const $btn = $('.btn');
 const $doors = $('.doors');
 const $rightColumn = $('#rightColumn');
+const $commonBtn = $('.commonBtn');
 
 $(window).on("load", function () {
   $('#skip').on('click', function() {
@@ -60,10 +61,10 @@ $(function() {
   const time = 100;
 
   // ページ内リンクのみを取得
-  $btn.on('click', function() {
+  $commonBtn.on('click', function() {
     // // 移動先となる要素を取得
     const target = $(this.hash);
-    const id = $(this).attr('id');
+    const openClose = $(this).attr('class');
     const $main = $('main');
     const hash = this.hash;
     //topからの距離
@@ -75,10 +76,10 @@ $(function() {
 
     $btn.css('pointer-events', 'none');
 
-    console.log(hash);
+    console.log(openClose);
 
     if (!target.length) {
-      if(id === 'close') {
+      if(openClose.match(/close/)) {
         $doors.css('z-index', 3);
         $btn.removeClass('on').addClass('off');
         $left.animate({'marginLeft':'0px'}, 500);
@@ -86,7 +87,7 @@ $(function() {
         setTimeout(function() {
           $btn.css('pointer-events', '');
         }, 1500);
-      }else if(id === 'open') {
+      }else if(openClose.match(/open/)) {
         $btn.removeClass('off').addClass('on');
         $left.animate({'marginLeft': '-100%'}, 100);
         $right.animate({'marginRight': '-100%'}, 100);
